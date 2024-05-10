@@ -23,7 +23,7 @@ def get_page():
 		os.sys.exit(1)
 
 	# Code here - Call get method in requests object, pass url and collect it in res
-	res = requests.get(url, headers=headers)
+	res = requests.get(url)
 
 	print (res)
 	# Code ends here
@@ -57,10 +57,6 @@ def save_file(text):
 	name = url.split("/")[-1]
 	print(name)
 	fname = f'scraped_articles/{name}.txt'
-	
-	# Code here - write a file using with (2 lines)
-	with open(fname, "w") as f:
-		f.write(text)
 	
 	# Code here - write a file using with (2 lines)
 	with open(fname, "w") as f:
