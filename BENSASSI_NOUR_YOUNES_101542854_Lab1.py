@@ -23,7 +23,10 @@ def get_page():
 		os.sys.exit(1)
 
 	# Code here - Call get method in requests object, pass url and collect it in res
-	res = requests.get(url)
+	headers = {
+    	'User-Agent': 'Mozilla/5.0'
+	}
+	res = requests.get(url, headers=headers)
 
 	print (res)
 	# Code ends here
@@ -52,11 +55,9 @@ def collect_text(soup):
 
 # function to save file in the current directory
 def save_file(text):
-	if not os.path.exists('./scraped_articles'):
-		os.mkdir('./scraped_articles')
 	name = url.split("/")[-1]
 	print(name)
-	fname = f'scraped_articles/{name}.txt'
+	fname = f'{name}.txt'
 	
 	# Code here - write a file using with (2 lines)
 	with open(fname, "w") as f:
