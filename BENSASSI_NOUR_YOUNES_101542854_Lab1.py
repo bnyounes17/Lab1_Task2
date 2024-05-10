@@ -23,9 +23,6 @@ def get_page():
 		os.sys.exit(1)
 
 	# Code here - Call get method in requests object, pass url and collect it in res
-	headers = {
-    	'User-Agent': 'Mozilla/5.0'
-	}
 	res = requests.get(url, headers=headers)
 
 	print (res)
