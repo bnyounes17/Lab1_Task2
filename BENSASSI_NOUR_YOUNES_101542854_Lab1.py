@@ -52,14 +52,19 @@ def collect_text(soup):
 
 # function to save file in the current directory
 def save_file(text):
+	if not os.path.exists('./scraped_articles'):
+		os.mkdir('./scraped_articles')
 	name = url.split("/")[-1]
 	print(name)
-	fname = f'{name}.txt'
+	fname = f'scraped_articles/{name}.txt'
 	
 	# Code here - write a file using with (2 lines)
 	with open(fname, "w") as f:
 		f.write(text)
-
+	
+	# Code here - write a file using with (2 lines)
+	with open(fname, "w") as f:
+		f.write(text)
 
 	# Code ends here
 
