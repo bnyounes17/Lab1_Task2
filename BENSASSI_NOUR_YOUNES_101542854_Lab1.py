@@ -60,7 +60,7 @@ def save_file(text):
 	
 	# Code here - write a file using with (2 lines)
 	with open(fname, "w") as f:
-		f.write(text)
+		f.write(clean(text))
 
 	# Code ends here
 
